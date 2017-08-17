@@ -21,3 +21,4 @@ c:\users\kyle\documents\visual studio 2017\Projects\Remux\Remux\bin\Windows\x86\
 c:\users\kyle\documents\visual studio 2017\Projects\Remux\Remux\obj\x86\Debug\Remux.csproj.CoreCompileInputs.cache
 c:\users\kyle\documents\visual studio 2017\Projects\Remux\Remux\obj\x86\Debug\Remux.exe
 c:\users\kyle\documents\visual studio 2017\Projects\Remux\Remux\obj\x86\Debug\Remux.pdb
+c:\users\kyle\documents\visual studio 2017\Projects\Remux\Remux\obj\x86\Debug\Remux.csprojResolveAssemblyReference.cache
