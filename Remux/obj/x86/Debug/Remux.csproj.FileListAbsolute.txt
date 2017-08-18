@@ -22,3 +22,6 @@ c:\users\kyle\documents\visual studio 2017\Projects\Remux\Remux\obj\x86\Debug\Re
 c:\users\kyle\documents\visual studio 2017\Projects\Remux\Remux\obj\x86\Debug\Remux.exe
 c:\users\kyle\documents\visual studio 2017\Projects\Remux\Remux\obj\x86\Debug\Remux.pdb
 c:\users\kyle\documents\visual studio 2017\Projects\Remux\Remux\obj\x86\Debug\Remux.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Documents\visual studio 2017\Projects\Remux\Remux\bin\Windows\x86\Debug\Remux.exe.config
+C:\Users\Kyle\Documents\visual studio 2017\Projects\Remux\Remux\bin\Windows\x86\Debug\Emux.GameBoy.dll
+C:\Users\Kyle\Documents\visual studio 2017\Projects\Remux\Remux\bin\Windows\x86\Debug\Emux.GameBoy.pdb

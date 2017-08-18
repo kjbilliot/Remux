@@ -1,5 +1,4 @@
-﻿using Emux.GameBoy.Input;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -16,6 +15,7 @@ namespace Emux.GameBoy.Cpu
         public const int SerialLinkIsr = 0x0058;
         public const int JoypadPressIsr = 0x0060;
         public const double OfficialClockFrequency = 4194304;
+        public Z80Instruction LastInstruction;
         
         /// <summary>
         /// Occurs when the processor is paused by breaking the execution explicitly, or when the control flow hit a breakpoint.
@@ -31,7 +31,6 @@ namespace Emux.GameBoy.Cpu
         private readonly GameBoy _device;
         private readonly ManualResetEvent _continueSignal = new ManualResetEvent(false);
         private readonly ManualResetEvent _terminateSignal = new ManualResetEvent(false);
-        private readonly IoManager _ioManager;
         private ulong _ticks;
         private bool _break = true;
         private bool _halt = false;
@@ -59,8 +58,6 @@ namespace Emux.GameBoy.Cpu
                 IsBackground = true
             }.Start();
 
-            _ioManager = new IoManager(_device);
-            
             _frameTimer = new NativeTimer((timerid, msg, user, dw1, dw2) =>
             {
                 _frameStartSignal.Set();
@@ -185,6 +182,7 @@ namespace Emux.GameBoy.Cpu
                 // Execute the next instruction.
                 var nextInstruction = ReadNextInstruction();
                 cycles = nextInstruction.Execute(_device);
+                //LastInstruction = nextInstruction;
             }
 
             // Check for interrupts.
@@ -244,7 +242,6 @@ namespace Emux.GameBoy.Cpu
             _frameTimer.Stop();
             _continueSignal.Reset();
             _terminateSignal.Set();
-            _ioManager.StopThread();
         }
 
         private Z80Instruction ReadNextInstruction()
